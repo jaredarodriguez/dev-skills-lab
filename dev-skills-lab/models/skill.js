@@ -5,9 +5,13 @@ const skill = [
 ];
 
 module.exports = {
-  getAll
+  getAll,
+  getOne
 };
 
+function getOne(id) {
+  return skill[id];
+}
 function getAll() {
   return skill;
 }
