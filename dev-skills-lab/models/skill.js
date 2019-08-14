@@ -1,4 +1,4 @@
-const skill = [
+const skills = [
   { skill: "Javascript", done: false },
   { skill: "CSS", done: false },
   { skill: "HTML", done: false }
@@ -6,12 +6,16 @@ const skill = [
 
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  create
 };
 
+function create(skill) {
+  skills.push(skill);
+}
 function getOne(id) {
-  return skill[id];
+  return skills[id];
 }
 function getAll() {
-  return skill;
+  return skills;
 }
