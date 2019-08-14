@@ -2,8 +2,13 @@ var Skill = require("../models/skill");
 
 module.exports = {
   index,
-  show
+  show,
+  new: newSkill
 };
+
+function newSkill(req, res) {
+  res.render("skills/new");
+}
 
 function show(req, res) {
   res.render("skills/show", {
@@ -14,6 +19,7 @@ function show(req, res) {
 
 function index(req, res) {
   res.render("skills/index", {
-    skills: Skill.getAll()
+    skills: Skill.getAll(),
+    time: req.time
   });
 }
